@@ -1,1 +1,488 @@
-Stage html file
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+  $("#about").addClass("active");
+  var prevPosition = 0;
+  $(window).on('scroll', function() {
+    var scrollPosition = $(document).scrollTop();
+    if (scrollPosition < prevPosition) {
+        if (scrollPosition < 100) {
+    $("ul li a").removeClass("active");
+    $("#about").addClass("active");
+
+  } else if (scrollPosition < 740) {
+    $("ul li a").removeClass("active");
+    $("#portf").addClass("active");
+  } else if (scrollPosition < 1400) {
+    $("ul li a").removeClass("active");
+    $("#educa").addClass("active");
+  } else if (scrollPosition < 2100) {
+    $("ul li a").removeClass("active");
+    $("#exper").addClass("active");
+  } else {
+    $("ul li a").removeClass("active");
+    $("#contact").addClass("active");
+  }
+    } else {
+        if (scrollPosition < 600) {
+    $("ul li a").removeClass("active");
+    $("#about").addClass("active");
+
+  } else if (scrollPosition < 1240) {
+    $("ul li a").removeClass("active");
+    $("#portf").addClass("active");
+  } else if (scrollPosition < 1880) {
+    $("ul li a").removeClass("active");
+    $("#educa").addClass("active");
+  } else if (scrollPosition < 2300) {
+    $("ul li a").removeClass("active");
+    $("#exper").addClass("active");
+  } else {
+    $("ul li a").removeClass("active");
+    $("#contact").addClass("active");
+  }
+    }
+    prevPosition = scrollPosition;
+
+    });
+
+  $('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top - 50
+    }, 600);
+    return false;
+});
+
+});
+</script>
+
+<!-- HTML/CSS below this line-->
+<style>
+  .name {
+    float: left;
+    display: block;
+    text-shadow: 0.5px 0 0 #000;
+    font-size: 64px;
+    margin: -33px 0px -17px 0px;
+    display: block;
+    color: white;
+    text-shadow: 1px 0 0 #444;
+    text-align: center;
+    padding: 7px 8px;
+    text-decoration: none;
+    position: relative;
+    z-index: 99;
+  }
+  #about-me {
+    color: white;
+    width: 100%;
+    height: 620px;
+    max-width: 1200px;
+    margin-top: 75px;
+    background-image:linear-gradient( rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5) ), url("http://bit.ly/2hiW3bc");
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+  }
+  #portfolio {
+    max-width: 1200px;
+    /*background-image: url("http://bit.ly/2iiA29x");*/
+    background-color: rgb(20,50,80);
+    width: 100%;
+    height: 645px;
+    margin-left: auto;
+    color: white;
+    margin-right: auto;
+    margin-top:  210px;
+  }
+  #education {
+    max-width: 1200px;
+    background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("http://bit.ly/2iz8k7I");
+    width: 100%;
+    height: 645px;
+    margin-left: auto;
+    color: white;
+    margin-right: auto;
+  }
+  #experience {
+    max-width: 1200px;
+    background-color: rgb(20,50,80);
+    width: 100%;
+    height: 645px;
+    margin-left: auto;
+    color: white;
+    margin-right: auto;
+  }
+  #contact-me {
+    max-width: 1200px;
+    background-image:linear-gradient( rgba(155, 155, 155, 0.5), rgba(155, 155, 155, 0.5) ), url("http://bit.ly/2huuhZA");
+    background-size: 1024px 545px;
+    width: 100%;
+    height: 545px;
+    margin-left: auto;
+    color: white;
+    margin-right: auto;
+  }
+  .text-body {
+    text-indent: 40px;
+  }
+  .title1 {
+    text-align: center;
+    color: white;
+    font-family: Verdana;
+    position: absolute;
+    z-index: 0;
+  }
+  .body1 {
+    position: relative;
+    margin-top: 3%;
+     z-index: 0;
+  }
+  .self-image {
+    width: 260px;
+    float: right;
+    border-radius: 50%;
+    position: relative;
+    z-index: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+  }
+  .photo {
+    width: 306px;
+    height: 216px;
+    overflow: hidden;
+  }
+  .project-photo {
+    width: 300px;
+    height: 210px;
+    border-width: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+  }
+  .photoDescription {
+    display: block;
+    margin-top: -215px;
+    position:relative;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: left;
+    z-index: 1;
+   background: rgba(29, 106, 154, 0.9);
+   align-self: left;
+   padding-left: 8px;
+   padding-right: 8px;
+    height: 213px;
+    width: 290px;
+    border-radius: 10px;
+    visibility: hidden;
+}
+  .photo:hover .photoDescription {
+    visibility: visible;
+    float:right;
+    opacity: 1;
+  }
+  .tinted {
+    background-color: rgba(7,7,7,0.6);
+    height: 500px;
+    width: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .active {
+    background-color: rgb(89, 200, 255);
+  }
+  .icon {
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    width: 55px;
+    height:55px;
+    float: left;
+    margin-left: 20%;
+  }
+  .contact-info {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin-top: 5px;
+  }
+  body {
+    background: #444;
+  }
+  ul {
+    list-style-type: none;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-position: center;
+    margin: -5px -15px 0px -15px;
+    padding: 20px 0px 0px 0px;
+    overflow: hidden;
+    background-color: rgb(0,170,255);
+    z-index: 99;
+  }
+  li {
+    font-family: sans-serif;
+    font-size: 24px;
+  }
+  li a {
+    display: block;
+    float: right;
+    color: white;
+    text-align: center;
+    text-align:bottom;
+    padding: 7px 8px;
+    text-decoration: none;
+    border-right: 2px solid #eee;
+    position: relative;
+    z-index: 99;
+  }
+  li a:link {
+    color: white;
+    text-decoration:none;
+  }
+  li a:hover {
+    background-color: rgb(0,144,217);
+    text-decoration: none;
+  }
+  p {
+    word-break: break-all;
+  }
+</style>
+<div class="container-fluid">
+  <ul>
+    <li class="name">Steven Lu</li>
+    <li><a href="#contact-me" style="border-right: none;" id="contact">Contact Me</a></li>
+    <li><a href="#experience" id="exper">Experience</a></li>
+    <li><a href="#education" id="educa">Education</a></li>
+    <li><a href="#portfolio" id="portf">Portfolio</a></li>
+    <li><a href="#about-me" id="about">About Me</a></li>
+  </ul>
+
+  <div id="about-me">
+    <div class="title1">
+      <div class="body1">
+        <h1>About Me</h1>
+        <hr width="75%" max-width="750px">
+      </div>
+      <div class="body1" style="text-align: left; margin-left: 12.5%; font-size: 17px;">
+        <strong>Software Engineering - Web Development </strong> <img src=" http://bit.ly/2iC88Zb" class="self-image" style="margin-right: 12%;">
+        <br>
+        <br>
+        My name is Steven Lu, I am an undergraduate student at the University of California, Berkeley majoring in Computer Science. I am currently seeking a Software Engineering internship over the summer of 2017, where I can apply the technical skills I acquired to practical applications and be pushed to learn more about software engineering.
+        <br>
+        <br>
+        <hr style="margin-right:15%">
+        <br>
+        <strong> University of California, Berkeley</strong>  (2015 - 2019)<br>
+        Major: Computer Science<br>
+        <br>
+        <hr style="margin-right: 15%">
+      </div>
+
+      <div id="portfolio">
+        <br>
+        <h1>Portfolio</h1>
+        <hr width="75%" max-width="1024px">
+        <br>
+        <div class="photo" style="float: left; margin-left: 15%;">
+          <img src="http://bit.ly/2i0Ymic" class="project-photo">
+          <div class="photoDescription">
+        BearMaps (April 2016) <br>
+            <div class="text-body">
+               A zooming, navigatable map of Berkeley created using raster graphics. It searches for specific locations and calculates the shortest route between any two points using map data. <br>
+               <br>
+              <div style="text-align: right">
+              [Coded in Java]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="photo" style="float: right; margin-right: 15%">
+        <img src="http://bit.ly/2iwSBdc" class="project-photo" >
+          <div class="photoDescription">
+            TypeFaster (Nov. 2016 - Present) <br>
+            <div class="text-body">
+               An application that calculates words per minute and ﬁnds major typing speed bottlenecks. It utilizes self-designed String compression to store text samples in half the memory space. <br>
+               <br>
+              <div style="text-align: right">
+              [Coded in Java]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="photo" style="float: left; margin-left: 15%; margin-top: 3.5%;">
+          <img src= "http://bit.ly/2iwV3R2" class="project-photo">
+          <div class="photoDescription">
+            Encryption (Dec. 2016 - Present) <br>
+            <div class="text-body">
+               An application that encrypts and decrypts messages with RSA using 1024 bit randomly generated keys. It uses randomized padding to improve the security of the encryption. <br>
+               <br>
+              <div style="text-align: right">
+              [Coded in Java]
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="photo" style="float: right; margin-right: 15%; margin-top: 3.5%;">
+          <img src= "http://bit.ly/2ilcwIW" class="project-photo">
+          <div class="photoDescription">
+            Image Compression (December 2016) <br>
+            <div class="text-body">
+               A program that uses Spark API to compress images. By applying DCT and quanization on sub-blocks of images using MapReduce, images are compressed on parallel.<br>
+               <br>
+              <div style="text-align: right">
+              [Coded in Python]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="education">
+        <br>
+        <h1> Education</h1>
+        <hr width="75%" max-width="750px">
+        <div class="tinted" style="float: left; margin-left: 8%;">
+          <h3>Coursework</h3>
+          <hr width= 80% style="margin-top: 0px;">
+          CS61A: Structure and Interpretation of Computer Programs <br>
+          <br>
+          CS97: Field Study <br>
+          <br>
+          CS70: Discrete Mathematics and Probability Theory<br>
+          <br>
+          Math 53: Multivariable Calculus<br>
+          <br>
+          Physics 7A: Physics For Scientists and Engineers <br>
+          <br>
+          CS61B: Data Structures <br>
+          <br>
+          Math 54: Linear Algebra and Diﬀerential Equations <br>
+          <br>
+          CS61C: Machine Structures
+          <br>
+          <br>
+          CS170: Efficient Algorithms and Intractable Programs
+        </div>
+        <div class="tinted" style="float: right; margin-right: 8%;">
+          <h3>Relevant Skills</h3>
+          <hr width= 80% style="margin-top: 0px;">
+          <div style="float: left; width: 40%;">
+            <h4> Languages</h4>
+            <hr style="margin-top: 0px;">
+            <strong><em>Proficient</em></strong>
+            <br>
+            <br>
+            Python
+            <br>
+            <br>
+            Java
+            <br>
+            <br>
+            C
+            <br>
+            <br>
+            <strong><em>Familiar</em></strong>
+            <br>
+            <br>
+            Javascript
+            <br>
+            <br>
+            HTML/CSS
+            <br>
+            <br>
+            SQLite
+          </div>
+          <div style=" float: right; width: 40%;">
+            <h4> Concepts</h4>
+            <hr style="margin-top: 0px;">
+            Object Oriented Programming (OOP)
+            <br>
+            <br>
+            Data Structures
+            <br>
+            <br>
+            Searching/Sorting Algorithms
+            <br>
+            <br>
+            Multithreading
+            <br>
+            <br>
+            SIMD (Vectorized Arithmetic)
+            <br>
+            <br>
+            MapReduce
+            <br>
+            <br>
+            ECC Memory / RAID
+          </div>
+        </div>
+      </div>
+
+      <div id="experience">
+        <br>
+        <h1>Experience</h1>
+        <hr width="75%" max-width="750px">
+        <div style="text-align: left;  padding-left: 10%">
+          <text style="font-size: 18px; color: black;">UC Berkeley Computer Science Department -  </text><br>
+          <em>CS61B Lab Assistant </em><strong>[January 2016 - Present]</strong>
+        <br><br>
+         • Attend oﬃce hours and labs to guide students through assignments and projects <br>
+          • Explain lecture concepts including algorithms, data structures, and eﬃciency
+        <br>
+        <br>
+        <br>
+          <text style="font-size: 18px; color: black;">Digital Media Academy </text>
+          <br>
+          <em>Teaching Assistant</em><strong>[June 2016 - July 2016]</strong> <br>
+          <br>
+          • Taught programming fundamentals in Java, Arduino, and Swift <br>
+          • Helped the students design, code, and debug their applications
+        <br>
+        <br>
+        <br>
+          <text style="font-size: 18px; color: black;">CodeHS</text> <br>
+          <em>Tutor</em><strong>[January 2016 - Present]</strong><br>
+          • Grade, debug, and comment on the functionality and eﬃciency of submitted code <br>
+          • Respond to student questions about computer science concepts
+      </div>
+      </div>
+
+      <div id="contact-me">
+        <br>
+        <h1> Contact Me</h1>
+        <hr width="75%" max-width="750px">
+        <br>
+        <br>
+        <image class="icon" src="http://bit.ly/2ibMYhw">
+          <h3 class="contact-info">steven.lu.522@berkeley.edu</h3>
+          <br>
+        <br>
+          <br>
+          <br>
+          <image class="icon" src="http://bit.ly/2ieZOON">
+        <h3 class="contact-info">(714) - 334 - 4738</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <image class="icon" src="http://bit.ly/2hLsJWR">
+        <h3 class="contact-info"> Berkeley, CA</h3>
+          <br>
+        <br>
+        <br>
+        <br>
+          <a href="file:///C:\Users\Steven Lu\Documents\Lu_Steven_Resume.pdf" style="color: white; text-decoration: none;"><image class="icon" src="http://bit.ly/2i5EbQe">
+          <h3 class="contact-info">Resume</a></h3>
+    </div>
+  </div>
+  </div>
+</div>
